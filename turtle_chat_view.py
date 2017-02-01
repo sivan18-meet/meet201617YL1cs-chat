@@ -20,12 +20,26 @@ from turtle_chat_widgets import TextInput
 #####################################################################################
 
 class TextBox(TextInput):
-    @abstractmethod
-    def draw_box:
+
+    def draw_box(self):
+        self.writer.hideturtle()
+        self.writer=turtle.clone()
+        self.writer.penup()
+        self.writer.goto(self.pos)
+        self.writer.pendown()
+        self.writer.goto(self.width,0)
+        self.writer.goto(self.width,self.height)
+        self.writer.goto(0,self.height)
+        self.writer.goto(self.pos)
+        
+            
+    def write_msg(self):
+        
         pass
-    def write_msg:
-        pass
+     
+     
     
+
 
 #Make a class called TextBox, which will be a subclass of TextInput.
 #Because TextInput is an abstract class, you must implement its abstract
@@ -62,6 +76,8 @@ class TextBox(TextInput):
 # 1. send a message to the other chat participant - to do this,
 #    you will need to call the send method of your Client instance
 # 2. update the messages that you see on the screen
+
+
 #
 #HINT: You may want to override the __init__ method so that it takes one additional
 #      input: view.  This will be an instance of the View class you will make next

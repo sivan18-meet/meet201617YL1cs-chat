@@ -22,9 +22,9 @@ from turtle_chat_widgets import TextInput
 class TextBox(TextInput):
 
     def draw_box(self):
+        
         self.pos= (-200,-200)
         turtle.hideturtle()
-        self.writer.hideturtle()
         self.writer=turtle.clone()
         self.writer.penup()
         self.writer.goto(self.pos)
@@ -33,14 +33,24 @@ class TextBox(TextInput):
         self.writer.goto(self.width,self.height)
         self.writer.goto(-200,self.height)
         self.writer.goto(self.pos)
+        self.writer.penup()
         
             
     def write_msg(self):
+        self.writer.penup()
+        self.writer.goto(-180,80)
+        self.writer.clear()
+        self.writer.write(self.new_msg)
         
-        pass
-     
-     
+
+        
+
+
+try1=TextBox()
+try1.draw_box()
+try1.write_msg()
     
+      
 
 
 #Make a class called TextBox, which will be a subclass of TextInput.

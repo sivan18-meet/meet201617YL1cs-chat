@@ -42,14 +42,12 @@ class TextBox(TextInput):
         self.writer.clear()
         self.writer.write(self.new_msg)
         
-
         
-
-
+'''
 try1=TextBox()
 try1.draw_box()
 try1.write_msg()
-    
+'''    
       
 
 
@@ -88,6 +86,45 @@ try1.write_msg()
 # 1. send a message to the other chat participant - to do this,
 #    you will need to call the send method of your Client instance
 # 2. update the messages that you see on the screen
+
+class SendButton(Button):
+    def __init__ (self,view,my_turtle=None,shape=None,pos=(0,0)):
+        if my_turtle is None :
+            #If no turtle given, create new one
+            self.turtle=turtle.clone()
+        else:
+            self.turtle=my_turtle
+
+        self.turtle.speed(0)
+        self.turtle.hideturtle()
+        self.turtle.penup()
+        self.turtle.goto(pos)
+
+        if shape is None:
+            self.turtle.shape('square')
+            self.turtle.shapesize(2,10)
+        else:
+            turtle.addshape(shape)
+            self.turtle.shape(shape)
+        self.turtle.showturtle()
+        self.turtle.onclick(self.fun) #Link listener to button function
+        turtle.listen() 
+        self.view = view
+    def fun(self):
+        self.username.send_msg(self.view.textbox.new_msg)
+            
+            
+            
+        
+        
+        
+    
+
+##client1=SendButton()
+##client1.send()
+    
+
+
 
 
 #
@@ -138,7 +175,12 @@ class View:
         #
         #at the Python shell.
         ###
-
+        my_client = Client()
+        self.my_client = my_client
+        textbox = TextBox()
+        self.textbox = textbox
+        self.textbox.draw_box()
+        self.button = SendButton(self)
         ###
         #This list will store all of the messages.
         #You can add strings to the front of the list using
@@ -174,7 +216,8 @@ class View:
         It should call self.display_msg() to cause the message
         display to be updated.
         '''
-        pass
+        self.my_client.send(self.textbox.new_msg)
+        self.msg_queue.insert(0,self.textbox.new_msg)
 
     def get_msg(self):
         return self.textbox.get_msg()

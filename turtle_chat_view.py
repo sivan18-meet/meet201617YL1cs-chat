@@ -24,7 +24,7 @@ class TextBox(TextInput):
     def draw_box(self):
         
         self.pos= (-145,-200)
-        self.height = 5
+        self.height =5
         self.width = 150
         turtle.hideturtle()
         self.writer=turtle.clone()
@@ -113,10 +113,14 @@ class SendButton(Button):
         turtle.listen() 
         self.view = view
         
+        
     def fun(self, x=0,y=0):
         
-        self.username.send_msg(self.new_msg)
-        pass
+        #self.username.send_msg(self.new_msg)
+        self.view.my_client.send_msg(self.view.textbox.new_msg)
+        #self.username.send_msg(self.view.textbox.new_msg)
+
+        
         
         
             

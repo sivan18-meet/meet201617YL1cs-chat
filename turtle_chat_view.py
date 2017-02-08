@@ -24,7 +24,7 @@ class TextBox(TextInput):
     def draw_box(self):
         
         self.pos= (-145,-200)
-        
+        self.height=5
         self.width = 150
         turtle.hideturtle()
         self.writer=turtle.clone()
@@ -104,7 +104,7 @@ class SendButton(Button):
 
         if shape is None:
             self.turtle.shape('square')
-            self.turtle.shapesize(2,10)
+            self.turtle.shapesize(2,8)
         else:
             turtle.addshape(shape)
             self.turtle.shape(shape)

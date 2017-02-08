@@ -24,7 +24,7 @@ class TextBox(TextInput):
     def draw_box(self):
         
         self.pos= (-145,-200)
-        self.height =5
+        
         self.width = 150
         turtle.hideturtle()
         self.writer=turtle.clone()
@@ -117,7 +117,7 @@ class SendButton(Button):
     def fun(self, x=0,y=0):
         
         #self.username.send_msg(self.new_msg)
-        self.view.my_client.send_msg(self.view.textbox.new_msg)
+        self.view.send_msg()
         #self.username.send_msg(self.view.textbox.new_msg)
 
         
@@ -173,6 +173,8 @@ class View:
         '''
         ###
         #Store the username and partner_name into the instance.
+        self.partner_name=partner_name
+        self.username=username
         ###
 
         ###
@@ -211,10 +213,10 @@ class View:
         #and write messages for each
         ###
         self.msg_queue_turtles = list()
-        for i in range (3):
+        for i in range (4):
             self.msg_queue.insert(i," ")
             self. msg_queue_turtles.append(turtle.clone())
-        for sivi in range (3):
+        for sivi in range (4):
             self.msg_queue_turtles[sivi].hideturtle()
             self.msg_queue_turtles[sivi].penup()
             self.msg_queue_turtles[sivi].goto(-100,sivi*(_LINE_SPACING))
@@ -243,7 +245,9 @@ class View:
         self.my_client.send(self.textbox.new_msg)
         self.msg_queue.insert(0,self.textbox.new_msg)
         '''
-        self.client.send(self.textbox.new_msg)
+        
+        self.my_client.send(self.textbox.new_msg)
+        self.msg_queue.insert(0,self.textbox.new_msg)
         self.display_msg()
         self.textbox.clear_msg()
         
@@ -265,7 +269,7 @@ class View:
         Then, it can call turtle.listen()
         '''
         turtle.listen()
-        pass
+        
 
     def msg_received(self,msg):
         '''
@@ -290,9 +294,9 @@ class View:
         This method should update the messages displayed in the screen.
         You can get the messages you want from self.msg_queue
         '''
-        for i in range (3):
+        for i in range (4):
             self.msg_queue_turtles[i].clear()
-        for t in range (3):
+        for t in range (4):
             self.msg_queue_turtles[t].write(self.msg_queue[t])
             
             

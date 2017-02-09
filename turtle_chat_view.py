@@ -32,15 +32,15 @@ class TextBox(TextInput):
         self.writer.goto(self.pos)
         self.writer.pendown()
         self.writer.goto(self.width,-200)
-        self.writer.goto(self.width,self.height)
-        self.writer.goto(-145,self.height)
+        self.writer.goto(self.width,self.height-35)
+        self.writer.goto(-145,self.height-35)
         self.writer.goto(self.pos)
         self.writer.penup()
         
             
     def write_msg(self):
         self.writer.penup()
-        self.writer.goto(-130,-20)
+        self.writer.goto(-130,-55)
         self.writer.clear()
         self.writer.write(self.new_msg)
         
@@ -90,7 +90,7 @@ try1.write_msg()
 # 2. update the messages that you see on the screen
 
 class SendButton(Button):
-    def __init__ (self,view,my_turtle=None,shape=None,pos=(0,-220)):
+    def __init__ (self,view,my_turtle=None,shape=None,pos=(-17,-240)):
         if my_turtle is None :
             #If no turtle given, create new one
             self.turtle=turtle.clone()
@@ -103,8 +103,8 @@ class SendButton(Button):
         self.turtle.goto(pos)
 
         if shape is None:
-            self.turtle.shape('square')
-            self.turtle.shapesize(2,8)
+            self.turtle.shape('turtle')
+            self.turtle.shapesize(4,4)
         else:
             turtle.addshape(shape)
             self.turtle.shape(shape)

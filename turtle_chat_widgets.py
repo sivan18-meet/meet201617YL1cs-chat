@@ -151,6 +151,7 @@ class TextInput(metaclass=ABCMeta):
         turtle.onkeypress( self.add_9, '9' )
 
         #Punctuation, etc.
+     
         turtle.onkeypress( self.add_comma, 'comma' )
         turtle.onkeypress( self.add_period, 'period' )
         turtle.onkeypress( self.add_exclaim, 'exclam' ) #Yes, exclam
@@ -240,6 +241,7 @@ class TextInput(metaclass=ABCMeta):
         turtle.onkeypress( self.add_X, 'X' )
         turtle.onkeypress( self.add_Y, 'Y' )
         turtle.onkeypress( self.add_Z, 'Z' )
+       
 
         #Start listeners
         turtle.listen()
@@ -607,3 +609,4 @@ class TextInput(metaclass=ABCMeta):
         self.new_msg+='9'
         self.write_msg()
         print(self.new_msg)
+

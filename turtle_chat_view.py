@@ -105,13 +105,13 @@ class SendButton(Button):
         self.turtle.hideturtle()
         self.turtle.penup()
         self.turtle.goto(pos)
-        image='seaturtle.gif'
+        image='seaturtle2.gif'
         screen = turtle.Screen()
         
 
         if shape is None:
-            self.turtle.screen.addshape('seaturtle.gif')
-            self.turtle.shape('seaturtle.gif')
+            self.turtle.screen.addshape('seaturtle2.gif')
+            self.turtle.shape('seaturtle2.gif')
             self.turtle.shapesize(2,2)
         else:
             turtle.addshape(shape)

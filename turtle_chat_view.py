@@ -24,7 +24,6 @@ class TextBox(TextInput):
     def draw_box(self):
         
         self.pos= (-145,-200)
-        self.height=5
         self.width = 150
         turtle.hideturtle()
         self.writer=turtle.clone()
@@ -32,15 +31,15 @@ class TextBox(TextInput):
         self.writer.goto(self.pos)
         self.writer.pendown()
         self.writer.goto(self.width,-200)
-        self.writer.goto(self.width,self.height-35)
-        self.writer.goto(-145,self.height-35)
+        self.writer.goto(self.width,self.height-70)
+        self.writer.goto(-145,self.height-70)
         self.writer.goto(self.pos)
         self.writer.penup()
         
             
     def write_msg(self):
         self.writer.penup()
-        self.writer.goto(-130,-55)
+        self.writer.goto(-130,-82)
         self.writer.clear()
         self.writer.write(self.new_msg)
         
@@ -90,7 +89,7 @@ try1.write_msg()
 # 2. update the messages that you see on the screen
 
 class SendButton(Button):
-    def __init__ (self,view,my_turtle=None,shape=None,pos=(-17,-240)):
+    def __init__ (self,view,my_turtle=None,shape=None,pos=(-12,-242)):
         if my_turtle is None :
             #If no turtle given, create new one
             self.turtle=turtle.clone()
@@ -104,7 +103,7 @@ class SendButton(Button):
 
         if shape is None:
             self.turtle.shape('turtle')
-            self.turtle.shapesize(4,4)
+            self.turtle.shapesize(3.5,3.5)
         else:
             turtle.addshape(shape)
             self.turtle.shape(shape)
@@ -213,10 +212,10 @@ class View:
         #and write messages for each
         ###
         self.msg_queue_turtles = list()
-        for i in range (4):
+        for i in range (5):
             self.msg_queue.insert(i," ")
             self. msg_queue_turtles.append(turtle.clone())
-        for sivi in range (4):
+        for sivi in range (5):
             self.msg_queue_turtles[sivi].hideturtle()
             self.msg_queue_turtles[sivi].penup()
             self.msg_queue_turtles[sivi].goto(-100,sivi*(_LINE_SPACING))
@@ -294,9 +293,9 @@ class View:
         This method should update the messages displayed in the screen.
         You can get the messages you want from self.msg_queue
         '''
-        for i in range (4):
+        for i in range (5):
             self.msg_queue_turtles[i].clear()
-        for t in range (4):
+        for t in range (5):
             self.msg_queue_turtles[t].write(self.msg_queue[t])
             
             

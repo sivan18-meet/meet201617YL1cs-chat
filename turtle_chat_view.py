@@ -18,30 +18,35 @@ from turtle_chat_widgets import TextInput
 #####################################################################################
 #                                   TextBox                                         #
 #####################################################################################
+window=turtle.Screen()
+#window.bgcolor("violet")
+window.bgpic("trees.gif")
 
 class TextBox(TextInput):
 
     def draw_box(self):
         
-        self.pos= (-145,-200)
+        self.pos= (-60,-200)
         self.width = 150
         turtle.hideturtle()
         self.writer=turtle.clone()
         self.writer.penup()
+        self.writer.pensize(3)
         self.writer.goto(self.pos)
         self.writer.pendown()
-        self.writer.goto(self.width,-200)
-        self.writer.goto(self.width,self.height-70)
-        self.writer.goto(-145,self.height-70)
+        self.writer.goto(self.width+80,-200)
+        self.writer.goto(self.width+80,self.height-70)
+        self.writer.goto(-60,self.height-70)
         self.writer.goto(self.pos)
         self.writer.penup()
         
             
     def write_msg(self):
         self.writer.penup()
-        self.writer.goto(-130,-82)
+        self.writer.goto(-50,-85)
         self.writer.clear()
-        self.writer.write(self.new_msg)
+        self.writer.write(self.new_msg, font = ('Arial',11,))
+       
         
         
 '''
@@ -89,7 +94,7 @@ try1.write_msg()
 # 2. update the messages that you see on the screen
 
 class SendButton(Button):
-    def __init__ (self,view,my_turtle=None,shape=None,pos=(-12,-242)):
+    def __init__ (self,view,my_turtle=None,shape=None,pos=(-170,-130)):
         if my_turtle is None :
             #If no turtle given, create new one
             self.turtle=turtle.clone()
@@ -100,10 +105,14 @@ class SendButton(Button):
         self.turtle.hideturtle()
         self.turtle.penup()
         self.turtle.goto(pos)
+        image='seaturtle.gif'
+        screen = turtle.Screen()
+        
 
         if shape is None:
-            self.turtle.shape('turtle')
-            self.turtle.shapesize(3.5,3.5)
+            self.turtle.screen.addshape('seaturtle.gif')
+            self.turtle.shape('seaturtle.gif')
+            self.turtle.shapesize(2,2)
         else:
             turtle.addshape(shape)
             self.turtle.shape(shape)
@@ -180,7 +189,9 @@ class View:
         #Make a new client object and store it in this instance of View
         #(i.e. self).  The name of the instance should be my_client
         ###
-        turtle.setup(width=400, height=600, startx=None, starty=None)
+        turtle.setup(width=550, height=600, startx=None, starty=None)
+        
+        
         ###
         #Set screen dimensions using turtle.setup
         #You can get help on this function, as with other turtle functions,
@@ -218,7 +229,7 @@ class View:
         for sivi in range (5):
             self.msg_queue_turtles[sivi].hideturtle()
             self.msg_queue_turtles[sivi].penup()
-            self.msg_queue_turtles[sivi].goto(-100,sivi*(_LINE_SPACING))
+            self.msg_queue_turtles[sivi].goto(-150,sivi*(_LINE_SPACING))
             
                 
         ###
@@ -246,9 +257,10 @@ class View:
         '''
         
         self.my_client.send(self.textbox.new_msg)
-        self.msg_queue.insert(0,self.textbox.new_msg)
+        self.msg_queue.insert(0,self.textbox.new_msg)   
         self.display_msg()
         self.textbox.clear_msg()
+        
         
 
     def get_msg(self):
@@ -296,7 +308,8 @@ class View:
         for i in range (5):
             self.msg_queue_turtles[i].clear()
         for t in range (5):
-            self.msg_queue_turtles[t].write(self.msg_queue[t])
+            self.msg_queue_turtles[t].write(self.msg_queue[t],font = ('Arial',11))
+            
             
             
 

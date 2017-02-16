@@ -46,8 +46,37 @@ class TextBox(TextInput):
         self.writer.goto(-50,-85)
         self.writer.clear()
         self.writer.write(self.new_msg, font = ('Arial',11,))
+
+ ##doodle chat   
+
+    def gothere(event):
+        turtle.penup()
+        turtle.goto(event.x-360,340-event.y)
+        turtle.pendown()
+
+    def movearound(event):
+        turtle.goto(event.x-360,340-event.y)
+
+    def release(event):
+        turtle.penup()
+
+    def reset(event):
+        turtle.clear()
+
+    turtle.reset()
+    turtle.speed(0)
+
+    c=turtle.getcanvas()
+
+    c.bind("<Button-1>", gothere)
+    c.bind("<B1-Motion>", movearound)
+    c.bind("<ButtonRelease-1>", release)
+    c.bind("<Escape>",reset)
+
+    s=turtle.Screen()
+    s.listen()
        
-        
+ ##doodle chat       
         
 '''
 try1=TextBox()

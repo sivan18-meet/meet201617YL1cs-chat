@@ -149,6 +149,7 @@ class TextInput(metaclass=ABCMeta):
         turtle.onkeypress( self.add_7, '7' )
         turtle.onkeypress( self.add_8, '8' )
         turtle.onkeypress( self.add_9, '9' )
+        
 
         #Punctuation, etc.
      
@@ -187,6 +188,7 @@ class TextInput(metaclass=ABCMeta):
         turtle.onkeypress( self.add_brackleft,'bracketleft')
 
         #Lower-case letters
+        #turtle.onkeypress( self.add_heart, u'\u2764' )
         turtle.onkeypress( self.add_a, 'a' )
         turtle.onkeypress( self.add_b, 'b' )
         turtle.onkeypress( self.add_c, 'c' )
@@ -610,3 +612,16 @@ class TextInput(metaclass=ABCMeta):
         self.write_msg()
         print(self.new_msg)
 
+        
+
+##    def add_heart(self):
+##        self.new_msg+= u'\u2764'
+##        self.write_msg()
+##        print(self.new_msg)
+
+##    def add_heart(self):
+##        heart = (u'\u2764')
+##        print(*heart)
+##        self.new_msg+= 'heart'
+##        self.write_msg()
+##        print(self.new_msg)

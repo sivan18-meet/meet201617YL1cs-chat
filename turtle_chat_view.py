@@ -47,34 +47,40 @@ class TextBox(TextInput):
         self.writer.clear()
         self.writer.write(self.new_msg, font = ('Arial',11,))
 
+##        heart ="heart"
+##        print(heart.replace("heart",u'\u2764'))
+        
+
+                    
+
  ##doodle chat   
 
-    def gothere(event):
-        turtle.penup()
-        turtle.goto(event.x-360,340-event.y)
-        turtle.pendown()
-
-    def movearound(event):
-        turtle.goto(event.x-360,340-event.y)
-
-    def release(event):
-        turtle.penup()
-
-    def reset(event):
-        turtle.clear()
-
-    turtle.reset()
-    turtle.speed(0)
-
-    c=turtle.getcanvas()
-
-    c.bind("<Button-1>", gothere)
-    c.bind("<B1-Motion>", movearound)
-    c.bind("<ButtonRelease-1>", release)
-    c.bind("<Escape>",reset)
-
-    s=turtle.Screen()
-    s.listen()
+##    def gothere(event):
+##        turtle.penup()
+##        turtle.goto(event.x-360,340-event.y)
+##        turtle.pendown()
+##
+##    def movearound(event):
+##        turtle.goto(event.x-360,340-event.y)
+##
+##    def release(event):
+##        turtle.penup()
+##
+##    def reset(event):
+##        turtle.clear()
+##
+##    turtle.reset()
+##    turtle.speed(0)
+##
+##    c=turtle.getcanvas()
+##
+##    c.bind("<Button-1>", gothere)
+##    c.bind("<B1-Motion>", movearound)
+##    c.bind("<ButtonRelease-1>", release)
+##    c.bind("<Escape>",reset)
+##
+##    s=turtle.Screen()
+##    s.listen()
        
  ##doodle chat       
         
@@ -330,6 +336,8 @@ class View:
         self.display_msg()
         
     def display_msg(self):
+
+    
         '''
         This method should update the messages displayed in the screen.
         You can get the messages you want from self.msg_queue
@@ -338,8 +346,11 @@ class View:
             self.msg_queue_turtles[i].clear()
         for t in range (5):
             self.msg_queue_turtles[t].write(self.msg_queue[t],font = ('Arial',11))
+
+##        heart ="heart"
+##        print(heart.replace("heart",u'\u2764'))
             
-            
+           
             
 
     def get_client(self):

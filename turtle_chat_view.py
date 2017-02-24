@@ -19,7 +19,6 @@ from turtle_chat_widgets import TextInput
 #                                   TextBox                                         #
 #####################################################################################
 window=turtle.Screen()
-#window.bgcolor("violet")
 window.bgpic("trees.gif")
 
 class TextBox(TextInput):
@@ -53,42 +52,37 @@ class TextBox(TextInput):
 
                     
 
- ##doodle chat   
+ ##doodle chat try (only doodles)
+'''        
+    def gothere(event):
+        turtle.penup()
+        turtle.goto(event.x-360,340-event.y)
+        turtle.pendown()
 
-##    def gothere(event):
-##        turtle.penup()
-##        turtle.goto(event.x-360,340-event.y)
-##        turtle.pendown()
-##
-##    def movearound(event):
-##        turtle.goto(event.x-360,340-event.y)
-##
-##    def release(event):
-##        turtle.penup()
-##
-##    def reset(event):
-##        turtle.clear()
-##
-##    turtle.reset()
-##    turtle.speed(0)
-##
-##    c=turtle.getcanvas()
-##
-##    c.bind("<Button-1>", gothere)
-##    c.bind("<B1-Motion>", movearound)
-##    c.bind("<ButtonRelease-1>", release)
-##    c.bind("<Escape>",reset)
-##
-##    s=turtle.Screen()
-##    s.listen()
+    def movearound(event):
+        turtle.goto(event.x-360,340-event.y)
+
+    def release(event):
+        turtle.penup()
+
+    def reset(event):
+        turtle.clear()
+
+    turtle.reset()
+    turtle.speed(0)
+
+    c=turtle.getcanvas()
+
+    c.bind("<Button-1>", gothere)
+    c.bind("<B1-Motion>", movearound)
+    c.bind("<ButtonRelease-1>", release)
+    c.bind("<Escape>",reset)
+
+    s=turtle.Screen()
+    s.listen()
        
- ##doodle chat       
-        
-'''
-try1=TextBox()
-try1.draw_box()
-try1.write_msg()
-'''    
+'''       
+            
       
 
 
@@ -162,23 +156,7 @@ class SendButton(Button):
         #self.username.send_msg(self.new_msg)
         self.view.send_msg()
         #self.username.send_msg(self.view.textbox.new_msg)
-
-        
-        
-        
-            
-            
-            
-        
-        
-        
     
-
-##client1=SendButton()
-##client1.send()
-    
-
-
 
 
 #
@@ -295,14 +273,12 @@ class View:
         self.msg_queue.insert(0,self.textbox.new_msg)   
         self.display_msg()
         self.textbox.clear_msg()
-        
-        
+               
 
     def get_msg(self):
         return self.textbox.get_msg()
 
     
-
     def setup_listeners(self):
         '''
         Set up send button - additional listener, in addition to click,

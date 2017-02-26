@@ -44,10 +44,13 @@ class TextBox(TextInput):
         self.writer.penup()
         self.writer.goto(-50,-85)
         self.writer.clear()
-        self.writer.write(self.new_msg, font = ('Arial',11,))
+        #self.writer.write(self.new_msg, font = ('Arial',11)) #original code
+        
+        self.writer.write(self.new_msg.replace("heartE",u'\u2764'), font = ('Arial',11))
+        #self.writer.write(self.new_msg.replace("smile",u"\u263A"), font = ('Arial',11))
 
-##        heart ="heart"
-##        print(heart.replace("heart",u'\u2764'))
+
+
         
 
                     
@@ -152,10 +155,9 @@ class SendButton(Button):
         
         
     def fun(self, x=0,y=0):
-        
-        #self.username.send_msg(self.new_msg)
         self.view.send_msg()
-        #self.username.send_msg(self.view.textbox.new_msg)
+
+       
     
 
 
@@ -268,7 +270,6 @@ class View:
         self.my_client.send(self.textbox.new_msg)
         self.msg_queue.insert(0,self.textbox.new_msg)
         '''
-        
         self.my_client.send(self.textbox.new_msg)
         self.msg_queue.insert(0,self.textbox.new_msg)   
         self.display_msg()
@@ -321,11 +322,8 @@ class View:
         for i in range (5):
             self.msg_queue_turtles[i].clear()
         for t in range (5):
-            self.msg_queue_turtles[t].write(self.msg_queue[t],font = ('Arial',11))
-
-##        heart ="heart"
-##        print(heart.replace("heart",u'\u2764'))
-            
+            #self.msg_queue_turtles[t].write(self.msg_queue[t],font = ('Arial',11)) original code
+            self.msg_queue_turtles[t].write(self.msg_queue[t].replace("heartE",u'\u2764'),font = ('Arial',11))            
            
             
 

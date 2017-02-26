@@ -56,7 +56,7 @@ class TextBox(TextInput):
                     
 
  ##doodle chat try (only doodles)
-'''        
+    '''    
     def gothere(event):
         turtle.penup()
         turtle.goto(event.x-360,340-event.y)
@@ -74,18 +74,17 @@ class TextBox(TextInput):
     turtle.reset()
     turtle.speed(0)
 
-    c=turtle.getcanvas()
+    click=turtle.getcanvas()
 
-    c.bind("<Button-1>", gothere)
-    c.bind("<B1-Motion>", movearound)
-    c.bind("<ButtonRelease-1>", release)
-    c.bind("<Escape>",reset)
+    click.bind("<Button-1>", gothere)
+    click.bind("<B1-Motion>", movearound)
+    click.bind("<ButtonRelease-1>", release)
+    click.bind("<Escape>",reset)
 
-    s=turtle.Screen()
-    s.listen()
+    sivi=turtle.Screen()
+    sivi.listen()
        
-'''       
-            
+    '''       
       
 
 
@@ -185,7 +184,7 @@ class View:
     _SCREEN_HEIGHT=600
     _LINE_SPACING=round(_SCREEN_HEIGHT/2/(_MSG_LOG_LENGTH+1))
 
-    def __init__(self,username='Me',partner_name='Partner'):
+    def __init__(self,username="me",partner_name = "partner"):
         _MSG_LOG_LENGTH=5 #Number of messages to retain in view
         _SCREEN_WIDTH=300
         _SCREEN_HEIGHT=600
@@ -198,6 +197,10 @@ class View:
         #Store the username and partner_name into the instance.
         self.partner_name=partner_name
         self.username=username
+
+        
+
+
         ###
 
         ###

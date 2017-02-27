@@ -44,9 +44,114 @@ class TextBox(TextInput):
         self.writer.penup()
         self.writer.goto(-50,-85)
         self.writer.clear()
-        #self.writer.write(self.new_msg, font = ('Arial',11)) #original code
+        self.new_msg=self.new_msg.replace(
+            "skullE",u"\u2620").replace(
+            "point downE",u"\u261F").replace(
+            "point rightE",u"\u261E").replace(
+            "point leftE",u"\u261C").replace(
+            "point upE",u"\u261D").replace(
+            "shamrockE",u"\u2618").replace(
+            "coffeeE",u"\u2615").replace(
+            "phoneE",u"\u260E").replace(
+            "snowmanE",u"\u2603").replace(
+            "umbrellaE",u"\u2602").replace(
+            "cloudE",u"\u2601").replace(
+            "sunE",u"\u2600").replace(
+            "smileE",u"\u263A").replace(
+            "heartE",u'\u2764').replace(
+            "starE",u"\u2605").replace(
+            "planeE",u"\u2708").replace(
+            "biohazardE",u"\u2623").replace(
+            "peaceE",u"\u262E").replace(
+            "yin yangE",u"\u262F").replace(
+            "wheelE",u"\u2638").replace(
+            "frownE",u"\u2639").replace(
+            "ariesE",u"\u2648").replace(
+            "taurusE",u"\u2649").replace(
+            "geminiE",u"\u264A").replace(
+            "cancerE",u"\u264B").replace(
+            "leoE",u"\u264C").replace(
+            "virgoE",u"\u264D").replace(
+            "libraE",u"\u264E").replace(
+            "scorpiusE",u"\u264F").replace(
+            "sagittariusE",u"\u2650").replace(
+            "capricornE",u"\u2651").replace(
+            "aquariusE",u"\u2652").replace(
+            "piscesE",u"\u2653").replace(
+            "kingE",u"\u265A").replace(
+            "queenE",u"\u265B").replace(
+            "rookE",u"\u265C").replace(
+            "bishopE",u"\u265D").replace(
+            "knightE",u"\u265E").replace(
+            "pawnE",u"\u265F").replace(
+            "black spadeE",u"\u2660").replace(
+            "white heartE",u"\u2661").replace(
+            "white diamodE",u"\u2662").replace(
+            "black clubE",u"\u2663").replace(
+            "white spadeE",u"\u2664").replace(
+            "black heartE",u"\u2665").replace(
+            "black diamondE",u"\u2666").replace(
+            "white clubE",u"\u2667").replace(
+            "musical note1E",u"\u266A").replace(
+            "musical note2E",u"\u266B").replace(
+            "recycleE",u"\u267B").replace(
+            "wheel chairE",u"\u267F").replace(
+            "white flagE",u"\u2690").replace(
+            "black flagE",u"\u2691").replace(
+            "anchorE",u"\u2693").replace(
+            "scalesE",u"\u2696").replace(
+            "warningE",u"\u26A0").replace(
+            "voltageE",u"\u26A1").replace(
+            "soccer ballE",u"\u26BD").replace(
+            "baseballE",u"\u26BE").replace(
+            "car slidingE",u"\u26D0").replace(
+            "chainsE",u"\u26D3").replace(
+            "no entryE",u"\u26D4").replace(
+            "two wayE",u"\u26D6").replace(
+            "black truckE",u"\u26DF").replace(
+            "churchE",u"\u26EA").replace(
+            "fountainE",u"\u26F2").replace(
+            "flag in holeE",u"\u26F3").replace(
+            "ferryE",u"\u26F4").replace(
+            "sailboatE",u"\u26F5").replace(
+            "skierE",u"\u26F7").replace(
+            "ice skateE",u"\u26F8").replace(
+            "tentE",u"\u26FA").replace(
+            "fuel pumpE",u"\u26FD").replace(
+            "scissorsE",u"\u2702").replace(
+            "envelopeE",u"\u2709").replace(
+            "raised fistE",u"\u270A").replace(
+            "raised handE",u"\u270B").replace(
+            "victory handE",u"\u270C").replace(
+            "writing handE",u"\u270D").replace(
+            "pencilE",u"\u270E").replace(
+            "check markE",u"\u2714").replace(
+            "crossE",u"\u271D").replace(
+            "star of davidE",u"\u2721").replace(
+            "sparklesE",u"\u2728").replace(
+            "black flowerE",u"\u273F").replace(
+            "white flowerE",u"\u2740").replace(
+            "snowflakeE",u"\u2744").replace(
+            "cross markE",u"\u274C").replace(
+            "question markE",u"\u2753").replace(
+            "squareE",u"\u2B1B").replace(
+            "pentagonE",u"\u2B1F").replace(
+            "hexagonE",u"\u2B23").replace(
+            "triangleE",u"\u2BC5").replace(
+            "watchE",u"\u231A").replace(
+            "hourglassE",u"\u231B").replace(
+            "alarm clockE",u"\u23F0").replace(
+            "star and crescentE",u"\u262A").replace(
+            "hammer and sickleE",u"\u262D").replace(
+            "radioactiveE",u"\u2622")
+
         
-        self.writer.write(self.new_msg.replace("heartE",u'\u2764'), font = ('Arial',11))
+        self.writer.write(self.new_msg, font = ('Arial',11)) #original code
+
+        
+        
+ 
+        
         #self.writer.write(self.new_msg.replace("smile",u"\u263A"), font = ('Arial',11))
 
 
@@ -326,8 +431,107 @@ class View:
             self.msg_queue_turtles[i].clear()
         for t in range (5):
             #self.msg_queue_turtles[t].write(self.msg_queue[t],font = ('Arial',11)) original code
-            self.msg_queue_turtles[t].write(self.msg_queue[t].replace("heartE",u'\u2764'),font = ('Arial',11))            
-           
+            self.msg_queue_turtles[t].write(self.msg_queue[t].replace(
+                "skullE",u"\u2620").replace(
+                "point downE",u"\u261F").replace(
+                "point rightE",u"\u261E").replace(
+                "point leftE",u"\u261C").replace(
+                "point upE",u"\u261D").replace(
+                "shamrockE",u"\u2618").replace(
+                "coffeeE",u"\u2615").replace(
+                "phoneE",u"\u260E").replace(
+                "snowmanE",u"\u2603").replace(
+                "umbrellaE",u"\u2602").replace(
+                "cloudE",u"\u2601").replace(
+                "sunE",u"\u2600").replace(
+                "heartE",u'\u2764').replace(
+                "smileE",u"\u263A").replace(
+                "starE",u"\u2605").replace(
+                "planeE",u"\u2708").replace(
+                "biohazardE",u"\u2623").replace(
+                "peaceE",u"\u262E").replace(
+                "yin yangE",u"\u262F").replace(
+                "wheelE",u"\u2638").replace(
+                "frownE",u"\u2639").replace(
+                "ariesE",u"\u2648").replace(
+                "taurusE",u"\u2649").replace(
+                "geminiE",u"\u264A").replace(
+                "cancerE",u"\u264B").replace(
+                "leoE",u"\u264C").replace(
+                "virgoE",u"\u264D").replace(
+                "libraE",u"\u264E").replace(
+                "scorpiusE",u"\u264F").replace(
+                "sagittariusE",u"\u2650").replace(
+                "capricornE",u"\u2651").replace(
+                "aquariusE",u"\u2652").replace(
+                "piscesE",u"\u2653").replace(
+                "kingE",u"\u265A").replace(
+                "queenE",u"\u265B").replace(
+                "rookE",u"\u265C").replace(
+                "bishopE",u"\u265D").replace(
+                "knightE",u"\u265E").replace(
+                "pawnE",u"\u265F").replace(
+                "black spadeE",u"\u2660").replace(
+                "white heartE",u"\u2661").replace(
+                "white diamodE",u"\u2662").replace(
+                "black clubE",u"\u2663").replace(
+                "white spadeE",u"\u2664").replace(
+                "black heartE",u"\u2665").replace(
+                "black diamondE",u"\u2666").replace(
+                "white clubE",u"\u2667").replace(
+                "musical note1E",u"\u266A").replace(
+                "musical note2E",u"\u266B").replace(
+                "recycleE",u"\u267B").replace(
+                "wheel chairE",u"\u267F").replace(
+                "white flagE",u"\u2690").replace(
+                "black flagE",u"\u2691").replace(
+                "anchorE",u"\u2693").replace(
+                "scalesE",u"\u2696").replace(
+                "warningE",u"\u26A0").replace(
+                "voltageE",u"\u26A1").replace(
+                "soccer ballE",u"\u26BD").replace(
+                "baseballE",u"\u26BE").replace(
+                "car slidingE",u"\u26D0").replace(
+                "chainsE",u"\u26D3").replace(
+                "no entryE",u"\u26D4").replace(
+                "two wayE",u"\u26D6").replace(
+                "black truckE",u"\u26DF").replace(
+                "churchE",u"\u26EA").replace(
+                "fountainE",u"\u26F2").replace(
+                "flag in holeE",u"\u26F3").replace(
+                "ferryE",u"\u26F4").replace(
+                "sailboatE",u"\u26F5").replace(
+                "skierE",u"\u26F7").replace(
+                "ice skateE",u"\u26F8").replace(
+                "tentE",u"\u26FA").replace(
+                "fuel pumpE",u"\u26FD").replace(
+                "scissorsE",u"\u2702").replace(
+                "envelopeE",u"\u2709").replace(
+                "raised fistE",u"\u270A").replace(
+                "raised handE",u"\u270B").replace(
+                "victory handE",u"\u270C").replace(
+                "writing handE",u"\u270D").replace(
+                "pencilE",u"\u270E").replace(
+                "check markE",u"\u2714").replace(
+                "crossE",u"\u271D").replace(
+                "star of davidE",u"\u2721").replace(
+                "sparklesE",u"\u2728").replace(
+                "black flowerE",u"\u273F").replace(
+                "white flowerE",u"\u2740").replace(
+                "snowflakeE",u"\u2744").replace(
+                "cross markE",u"\u274C").replace(
+                "question markE",u"\u2753").replace(
+                "squareE",u"\u2B1B").replace(
+                "pentagonE",u"\u2B1F").replace(
+                "hexagonE",u"\u2B23").replace(
+                "triangleE",u"\u2BC5").replace(
+                "watchE",u"\u231A").replace(
+                "hourglassE",u"\u231B").replace(
+                "alarm clockE",u"\u23F0").replace(
+                "star and crescentE",u"\u262A").replace(
+                "hammer and sickleE",u"\u262D").replace(
+                "radioactiveE",u"\u2622"),font = ('Arial',11))            
+            #self.msg_queue[t].replace("smileE",u"\u263A")
             
 
     def get_client(self):

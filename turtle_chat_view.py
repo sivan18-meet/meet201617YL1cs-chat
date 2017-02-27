@@ -148,27 +148,17 @@ class TextBox(TextInput):
         
         self.writer.write(self.new_msg, font = ('Arial',11)) #original code
 
-        
-        
- 
-        
-        #self.writer.write(self.new_msg.replace("smile",u"\u263A"), font = ('Arial',11))
-
-
-
-        
-
                     
 
  ##doodle chat try (only doodles)
-    '''    
+        
     def gothere(event):
         turtle.penup()
-        turtle.goto(event.x-360,340-event.y)
+        turtle.goto(event.x-280,300-event.y)
         turtle.pendown()
 
     def movearound(event):
-        turtle.goto(event.x-360,340-event.y)
+        turtle.goto(event.x-280,300-event.y)
 
     def release(event):
         turtle.penup()
@@ -189,7 +179,7 @@ class TextBox(TextInput):
     sivi=turtle.Screen()
     sivi.listen()
        
-    '''       
+           
       
 
 
@@ -531,7 +521,6 @@ class View:
                 "star and crescentE",u"\u262A").replace(
                 "hammer and sickleE",u"\u262D").replace(
                 "radioactiveE",u"\u2622"),font = ('Arial',11))            
-            #self.msg_queue[t].replace("smileE",u"\u263A")
             
 
     def get_client(self):

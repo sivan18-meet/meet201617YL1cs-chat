@@ -22,6 +22,7 @@ window=turtle.Screen()
 window.bgpic("trees.gif")
 
 class TextBox(TextInput):
+    my_doodle = list()
 
     def draw_box(self):
         
@@ -156,15 +157,34 @@ class TextBox(TextInput):
         turtle.penup()
         turtle.goto(event.x-280,300-event.y)
         turtle.pendown()
+        my_doodle = list()
 
     def movearound(event):
         turtle.goto(event.x-280,300-event.y)
-
+        #my_doodle.insert(0,turtle.pos())
     def release(event):
         turtle.penup()
 
     def reset(event):
         turtle.clear()
+        my_doodle = list()
+
+    def send_drawing():
+        self.view.my_client.send(my_doodle)
+        '''
+        self.msg_queue.insert(0,self.textbox.new_msg)   
+        self.display_msg()
+        self.textbox.clear_msg()
+        '''
+        pass
+    def drawing_recived(doodle_list):
+        turtle.penup()
+        turtle.goto(doodle_list[0])
+        turtle.pendown()
+        for i in doodle_list:
+            turtle.goto(i)
+        
+        pass
 
     turtle.reset()
     turtle.speed(0)
@@ -279,7 +299,7 @@ class View:
     _SCREEN_HEIGHT=600
     _LINE_SPACING=round(_SCREEN_HEIGHT/2/(_MSG_LOG_LENGTH+1))
 
-    def __init__(self,username="me",partner_name = "partner"):
+    def __init__(self,username="Me",partner_name = "Partner" ):
         _MSG_LOG_LENGTH=5 #Number of messages to retain in view
         _SCREEN_WIDTH=300
         _SCREEN_HEIGHT=600
@@ -290,9 +310,10 @@ class View:
         '''
         ###
         #Store the username and partner_name into the instance.
-        self.partner_name=partner_name
+        #self.partner_name=partner_name
         self.username=username
-
+        self.partner_name=partner_name
+        
         
 
 
@@ -335,6 +356,7 @@ class View:
         #You can use the clear() and write() methods to erase
         #and write messages for each
         ###
+
         self.msg_queue_turtles = list()
         for i in range (5):
             self.msg_queue.insert(i," ")

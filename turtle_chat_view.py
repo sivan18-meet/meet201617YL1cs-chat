@@ -170,18 +170,18 @@ class TextBox(TextInput):
         my_doodle = list()
 
     def send_drawing():
-        self.view.my_client.send(my_doodle)
+        self.view.my_client.send(self.my_doodle)
         '''
         self.msg_queue.insert(0,self.textbox.new_msg)   
         self.display_msg()
         self.textbox.clear_msg()
         '''
         pass
-    def drawing_recived(doodle_list):
+    def drawing_recived(my_doodle):
         turtle.penup()
-        turtle.goto(doodle_list[0])
+        turtle.goto(my_doodle[0])
         turtle.pendown()
-        for i in doodle_list:
+        for i in my_doodle:
             turtle.goto(i)
         
         pass
@@ -198,9 +198,10 @@ class TextBox(TextInput):
 
     sivi=turtle.Screen()
     sivi.listen()
-       
-           
-      
+
+
+
+
 
 
 #Make a class called TextBox, which will be a subclass of TextInput.
@@ -342,6 +343,10 @@ class View:
         self.textbox = textbox
         self.textbox.draw_box()
         self.button = SendButton(self)
+
+
+        #my_client.username = partner_name
+
         ###
         #This list will store all of the messages.
         #You can add strings to the front of the list using
@@ -391,7 +396,7 @@ class View:
         self.msg_queue.insert(0,self.textbox.new_msg)
         '''
         self.my_client.send(self.textbox.new_msg)
-        self.msg_queue.insert(0,self.textbox.new_msg)   
+        self.msg_queue.insert(0,"Me: \r"+self.textbox.new_msg)   
         self.display_msg()
         self.textbox.clear_msg()
                
